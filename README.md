@@ -1,19 +1,19 @@
-# Code Quiz
+# Golden Girls Quiz
 
 ## Decsription
 
 ### User Story
 
 ```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
+AS A Golden Girl fan
+I WANT to take a timed quiz that stores high scores
+SO THAT I can gauge how much I know about the show
 ```
 
 ### Acceptance Criteria
 
 ```
-GIVEN I am taking a code quiz
+GIVEN I am taking a quiz
 WHEN I click the start button
 THEN a timer starts and I am presented with a question
 WHEN I answer a question
