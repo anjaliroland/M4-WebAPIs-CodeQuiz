@@ -65,4 +65,45 @@
     // click view scores
 
 
-
+var questionSrc = [
+    {
+        question: "Where is Rose from?",
+        choices: ["a. Portland", "b. Miami", "c. St. Olaf", "d. Cincinnati"],
+        answer: "c"
+    },
+    {
+        question: "Who is Sophia's daughter?",
+        choices: ["a. Blanche", "b. Dorothy", "c. Rose", "d. Betty"],
+        answer: "b"
+    },
+    {
+        question: "What is the name of the retirement home Dorothy threatens to send Sophia?",
+        choices: ["a. Shady Pines", "b. Gnarly Knolls", "c. Mild Manor", "d. Stone Ranch"],
+        answer: "a"
+    },
+    {
+        question: "What food did the girls often eat when talking about their problems?",
+        choices: ["a. Cookies", "b. Ice Cream", "c. Scones", "d. Cheesecake"],
+        answer: "d"
+    },
+    {
+        question: "What is the name of Dorothy's ex husband?",
+        choices: ["a. Stan", "b. Miles", "c. Alan", "d. Phil"],
+        answer: "a"
+    },
+    {
+        question: "What would Sophia often say before starting a story?",
+        choices: ["a. 'Back in my day, ________'", "b. 'Before I dies, let me tell you about the time ________'", "c. 'Picture it ________'", "d. 'Did you know ________'"],
+        answer: "c"
+    },
+    {
+        question: "Whose house do all the girls live in?",
+        choices: ["a. Dorothy", "b. Blanche", "c. Rose", "d. Sophia"],
+        answer: "b"
+    },
+    {
+        question: "Where do the all the girls live?",
+        choices: ["a. Greenwich, NY", "b. Palm Springs, CA", "c. Portland, OR", "d. Miami, FL"],
+        answer: "d"
+    }
+];  
