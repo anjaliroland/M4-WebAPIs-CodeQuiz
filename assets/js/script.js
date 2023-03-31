@@ -112,3 +112,23 @@ var answerBtn1 = document.querySelector("#choice1");
 var answerBtn2 = document.querySelector("#choice2");
 var answerBtn3 = document.querySelector("#choice3");
 var answerBtn4 = document.querySelector("#choice4");
+
+// timer function & variables
+var timeLeft = document.querySelector("#timer");
+var secondsLeft = 300;
+
+function countdown() {
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timeLeft.textContent = "Time left: " + secondsLeft + "s";
+
+        if (secondsLeft <= 0) {
+            clearInterval(timerInterval);
+            timeLeft.textContent = "Time is up!";
+            gameOver();
+        }// else if last question (the amount of questions is greater >= amount of questions??)
+        //clearInterval(timerInterval);
+        //gameOver();
+    
+    }, 1000);
+}
