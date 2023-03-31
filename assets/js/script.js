@@ -107,3 +107,8 @@ var questionSrc = [
         answer: "d"
     }
 ];  
+
+var answerBtn1 = document.querySelector("#choice1");
+var answerBtn2 = document.querySelector("#choice2");
+var answerBtn3 = document.querySelector("#choice3");
+var answerBtn4 = document.querySelector("#choice4");
