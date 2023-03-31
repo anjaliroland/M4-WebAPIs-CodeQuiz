@@ -1,7 +1,7 @@
-// TODO: define all questions and answers
+//A. TODO: define all questions and answers
     // create variables for questions and answers that connect to html elements
 
-// TODO: create timer function that will countdown seconds
+//B. TODO: create timer function that will countdown seconds
     // create variables for timer that connect to html elements
     // timer function must:
         // display correctly on screen
@@ -9,14 +9,14 @@
         // IF timer hits 0:
             // End quiz function is called
 
-// TODO: create a function to start the quiz
+//C. TODO: create a function to start the quiz
     // create variables for start that connect to html
     // When quiz start button is pushed:
         // hide the start button
         // display the first question
         // begin timer countdown
 
-// TODO: create a function to render a question
+//D. TODO: create a function to render a question
     //create variables for game page to connect to html elements
     // When question is rendered:
         // remove previous question
@@ -24,7 +24,7 @@
         // make button for each answer
         // add answers to answers container
 
-// TODO: create function to end quiz 
+//E. TODO: create function to end quiz 
     // create variables for end of quiz that connect to html elements
     // when quiz is completed:
         // timer stops
@@ -32,7 +32,7 @@
         // end screen is shown
         // time remaining is shown as score
 
-// TODO: create function that handles answer responses
+//F. TODO: create function that handles answer responses
     // create variables for answer responses that connect to html elements
     // IF answer is correct :
         // hide answered question
@@ -46,7 +46,7 @@
     // IF no more questions: 
         // end quiz is called
     
-// TODO: create a function that saves high scores
+//G. TODO: create a function that saves high scores
     // create variables for scores that connect to html elements
     // when function runs:
         // get value of users initials
@@ -54,17 +54,17 @@
         // retrieve existing data from local storage
         // redirect to start screen after save
 
-// TODO: create a function that listens for keyboard events
+//H. TODO: create a function that listens for keyboard events
     // checks if the 'Enter' key was pressed for saving scores
     // POTENTIALLY check if 'a', 'b', 'c', or 'd' is pressed for answers
 
-// TODO: add event listeners for the following: 
+//I. TODO: add event listeners for the following: 
     // click start
     // click answers
     // click save score
     // click view scores
 
-
+// A. TODO: define all questions and answers
 var questionSrc = [
     {
         question: "Where is Rose from?",
@@ -113,7 +113,7 @@ var answerBtn2 = document.querySelector("#choice2");
 var answerBtn3 = document.querySelector("#choice3");
 var answerBtn4 = document.querySelector("#choice4");
 
-// timer function & variables
+// B. TODO: create timer function that will countdown seconds
 var timeLeft = document.querySelector("#timer");
 var secondsLeft = 300;
 
@@ -125,10 +125,42 @@ function countdown() {
         if (secondsLeft <= 0) {
             clearInterval(timerInterval);
             timeLeft.textContent = "Time is up!";
-            gameOver();
+            endQuiz();
         }// else if last question (the amount of questions is greater >= amount of questions??)
         //clearInterval(timerInterval);
-        //gameOver();
+        //endQuiz();
     
     }, 1000);
 }
+
+// C. TODO: create a function to start the quiz
+var startBtn = document.querySelector("#startBtn");
+var startPge = document.querySelector("#start");
+var gamePge = document.querySelector("#gamePge");
+
+function startQuiz() {
+    startPge.style.display = "none";
+    gamePge.style.display = "block";
+    countdown();
+    askQuestion();
+};
+
+
+//D. TODO: create a function to render a question
+var questionEl = document.querySelector("#question");
+
+function askQuestion() {
+    questionEl.textContent = questionSrc.question;
+    answerBtn1.textContent = questionSrc.choices[0];
+    answerBtn2.textContent = questionSrc.choices[1];
+    answerBtn3.textContent = questionSrc.choices[2];
+    answerBtn4.textContent = questionSrc.choices[3];
+};
+
+
+//E. TODO: create function to end quiz 
+var savePge = document.querySelector("#savePge");
+
+function endQuiz() {
+
+};
