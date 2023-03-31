@@ -9,28 +9,61 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <!-- header -->
+<!-- header -->
     <header>
-        <!-- highscores -->
+
+    <!-- highscores -->
         <div>
             <button class="button" id="score-check">View Highscores</button>
         </div>
-        <!-- timer -->
+
+    <!-- timer -->
         <div id="timer"> Time: s</div>
     </header>
 
     <main>
-        <!-- start page -->
+    <!-- start page -->
+        <section class="start" id="start">
+            <h1>Golden Girls Quiz</h1>
+            <p>Try to answer the following Golden Girls related questions with in the time limit. Keep in mind that incorrect answers will penalize your score/time by 20 seconds!</p>
+            <button class="button" id="startBtn">Start Quiz</button>
+        </section>
+       
+    <!-- quiz page(s)-->
+        <section class="gamePge" id="gamePge">
+            
+        <!-- questions / answers -->
+            <div>
+                <h2 id="question-id">Ask the question</h2>
+                <ul>
+                    <li><button class="answers" id="choice1" value="a">Answer1</button></li>
+                    <li><button class="answers" id="choice2" value="b">Answer2</button></li>
+                    <li><button class="answers" id="choice3" value="c">Answer3</button></li>
+                    <li><button class="answers" id="choice4" value="d">Answer4</button></li>
+                </ul>
+            </div>
 
-        <!-- quiz page(s)-->
+        <!-- answer check -->
+            <div id="check">
+                <p>Correct or Incorrect</p>
+            </div>
+        </section>
+       
+    <!-- score page -->
+        <section class="submitPge" id="submitPge">
+            <h2 id="finish">All done!</h2>
+            <p id="totalScore">Your final score is: </p>
+            <p>Enter initials to save your score <input id="initials">
+                <button class="button" id="saveBtn">Save</button>
+            </p>
+        </section>
 
-            <!-- questions / answers -->
-
-            <!-- answer check -->
-
-        <!-- score page -->
-
-        <!-- highcore page -->
+    <!-- highcore page -->
+        <section class="highscorePge" id="highscorePge">
+            <h2>High Scores</h2>
+            <p id="recordScore">Your record</p>
+            <button class="button" id="backBtn">Go Back</button>
+        </section>
     </main>
 
     <!-- footer -->
