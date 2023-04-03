@@ -124,9 +124,10 @@ function countdown() {
             clearInterval(timerInterval);
             timeLeft.textContent = "Time is up!";
             endQuiz();
-        }// else if last question (the amount of questions is greater >= amount of questions??)
-        //clearInterval(timerInterval);
-        //endQuiz();
+        }else if (questionCount >= questionSrc.length +1) {
+            clearInterval(timerInterval);
+            endQuiz();
+        }
     
     }, 1000);
 }
@@ -197,3 +198,6 @@ function checkAnswers(event) {
     }
     questionCount++;
 };
+
+
+//G. TODO: create a function that saves high scores
