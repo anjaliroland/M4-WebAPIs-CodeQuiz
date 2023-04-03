@@ -19,7 +19,6 @@
 //D. TODO: create a function to render a question
     //create variables for game page to connect to html elements
     // When question is rendered:
-        // remove previous question
         // add question to question container
         // make button for each answer
         // add answers to answers container
@@ -35,13 +34,12 @@
 //F. TODO: create function that handles answer responses
     // create variables for answer responses that connect to html elements
     // IF answer is correct :
-        // hide answered question
-        // display new question
+        // flash correct 
     // ELSE IF answer is wrong:
         // subtract time from timer
         // wrong answer message is flashed on screen (setTimeout)
-        // hide answered question
-        // display new question
+    //
+    // display new question
     // 
     // IF no more questions: 
         // end quiz is called
@@ -142,19 +140,22 @@ function startQuiz() {
     startPge.style.display = "none";
     gamePge.style.display = "block";
     countdown();
-    askQuestion();
+    askQuestion(questionNum);
 };
 
 
 //D. TODO: create a function to render a question
 var questionEl = document.querySelector("#question");
+var questionNum = 0;
+var questionCount = 1;
 
-function askQuestion() {
-    questionEl.textContent = questionSrc.question;
-    answerBtn1.textContent = questionSrc.choices[0];
-    answerBtn2.textContent = questionSrc.choices[1];
-    answerBtn3.textContent = questionSrc.choices[2];
-    answerBtn4.textContent = questionSrc.choices[3];
+function askQuestion(n) {
+    questionEl.textContent = questionSrc[n].question;
+    answerBtn1.textContent = questionSrc[n].choices[0];
+    answerBtn2.textContent = questionSrc[n].choices[1];
+    answerBtn3.textContent = questionSrc[n].choices[2];
+    answerBtn4.textContent = questionSrc[n].choices[3];
+    questionNum = n;
 };
 
 
@@ -168,4 +169,31 @@ function endQuiz() {
     console.log(savePge);
     endScore.textContent = "Your final score is: " + secondsLeft;
     timeLeft.style.display = "none";
+};
+
+
+//F. TODO: create function that handles answer responses
+var checked = document.querySelector("#check");
+
+function checkAnswers(event) {
+    event.preventDefault();
+
+    checked.style.display = "block";
+    setTimeout(function () {
+        checked.style.display = "none";
+    }, 1000);
+
+    if(questionSrc[questionNum].answer == event.target.value) {
+        checked.textContent = "Correct!";
+    } else {
+        secondsLeft = secondsLeft - 20;
+        checked.textContent = "Wrong! The correct answer is " + questionSrc[questionNum].answer;
+    }
+
+    if (questionNum < questionSrc.length -1) {
+        askQuestion(questionNum +1);
+    } else {
+        endQuiz();
+    }
+    questionCount++;
 };
