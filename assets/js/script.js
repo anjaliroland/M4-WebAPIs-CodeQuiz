@@ -160,7 +160,12 @@ function askQuestion() {
 
 //E. TODO: create function to end quiz 
 var savePge = document.querySelector("#savePge");
+var endScore = document.querySelector("#totalScore")
 
 function endQuiz() {
-
+    gamePge.style.display = "none";
+    savePge.style.display = "block";
+    console.log(savePge);
+    endScore.textContent = "Your final score is: " + secondsLeft;
+    timeLeft.style.display = "none";
 };
