@@ -52,11 +52,7 @@
         // retrieve existing data from local storage
         // redirect to start screen after save
 
-//H. TODO: create a function that listens for keyboard events
-    // checks if the 'Enter' key was pressed for saving scores
-    // POTENTIALLY check if 'a', 'b', 'c', or 'd' is pressed for answers
-
-//I. TODO: add event listeners for the following: 
+//H. TODO: add event listeners for the following: 
     // click start
     // click answers
     // click save score
@@ -260,11 +256,7 @@ function saveScore() {
 };
 
 
-//H. TODO: create a function that listens for keyboard events
-
-
-
-//I. TODO: add event listeners 
+//H. TODO: add event listeners 
 var answerChoices = document.querySelectorAll(".answers")
 
 startBtn.addEventListener("click", startQuiz); 
@@ -302,3 +294,9 @@ backBtn.addEventListener("click",function(event){
     location.reload();
 });
 
+var clearBtn = document.querySelector("#clearBtn")
+clearBtn.addEventListener("click",function(event) {
+    event.preventDefault();
+    localStorage.clear();
+    renderScore();
+});
