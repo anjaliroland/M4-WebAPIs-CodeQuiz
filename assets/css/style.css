@@ -1,29 +1,130 @@
 /* variables */
-
+:root {
+    --rosey-purple: rgb(199, 176, 192);
+    --lime-green: rgb(221,232,194);
+    --light-green: rgb(200,228,206);
+    --green: rgb(187,226,203);
+    --blue: rgb(174,226,216);
+}
 
 /* universal styling */
-
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 /* element styling */
-
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    background-color: var(--green);
+}
 
 /* header styling */
-
-
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    background-color: var(--blue);
+    color: var(--rosey-purple);
+}
+    /* veiw highscores styling */
+header button {
+    margin-top: 12px;
+    font-size: 20px;
+}
     /* timer styling */
+#timer {
+    font-size: 30px;
+    font-weight: bold;
+}
 
+/* main section and button styling */
+main {
+    text-align: center;
+    justify-content: center;
+    flex: 1 0 auto;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.gamePge,
+.savePge,
+.highscorePge,
+#check {
+    display: none;
+}
+
+.button {
+    background: blanchedalmond;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.button:hover {
+    background-color: var(--lime-green);
+    color: darkslategrey;
+}
 
 /* start page styling */
+.start h1 {
+    padding-top: 100px;
+    color: var(--rosey-purple);
+    font-size: 50px;
+    text-decoration: underline var(--lime-green);
+}
 
+.start p {
+    padding-top: 10px;
+    font-size: 28px;
+    color: var(--rosey-purple);
+}
+
+.start button {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
 
 /* quiz page styling */
-
+.gamePage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
 
     /* question styling */
-
+.gamePage h2 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
 
     /* answer styling */
+ .gamePge ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: baseline;
+}
 
+.gamePge li {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+}
 
 /* answer check styling */
 
