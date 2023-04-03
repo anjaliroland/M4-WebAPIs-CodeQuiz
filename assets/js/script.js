@@ -201,3 +201,104 @@ function checkAnswers(event) {
 
 
 //G. TODO: create a function that saves high scores
+var saveBtn = document.querySelector("#saveBtn");
+var highscorePge = document.querySelector("#highscorePge");
+var recordScore = document.querySelector("#recordScore");
+var userInitials = document.querySelector("#initials");
+
+function getScore() {
+    var currentList = localStorage.getItem("ScoreList");
+    if (currentList !== null) {
+        newList = JSON.parse(currentList);
+        return newList;
+    } else {
+        newList = [];
+    }
+    return newList;
+};
+
+function renderScore() {
+    recordScore.innerHTML = "";
+    recordScore.style.display ="block";
+    var highScores = sort();   
+    var topFive = highScores.slice(0,5);
+    
+    for (var i = 0; i < topFive.length; i++) {
+        var item = topFive[i];
+        var li = document.createElement("li");
+        li.textContent = item.user + " - " + item.score;
+        li.setAttribute("data-index", i);
+        recordScore.appendChild(li);
+    }
+};
+
+function sort() {
+    var unsortedList = getScore();
+    
+    if (getScore == null) {
+        return;
+    } else{
+    unsortedList.sort(function(a,b){
+        return b.score - a.score;
+    })
+    return unsortedList;
+}};
+
+function addScore(n) {
+    var addedList = getScore();
+    addedList.push(n);
+    localStorage.setItem("ScoreList", JSON.stringify(addedList));
+};
+
+function saveScore() {
+    var scoreItem = {
+        user: userInitials.value,
+        score: secondsLeft
+    }
+    addScore(scoreItem);
+    renderScore();
+};
+
+
+//H. TODO: create a function that listens for keyboard events
+
+
+
+//I. TODO: add event listeners 
+var answerChoices = document.querySelectorAll(".answers")
+
+startBtn.addEventListener("click", startQuiz); 
+
+answerChoices.forEach(function(click){
+    click.addEventListener("click", checkAnswers);
+});
+
+saveBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    savePge.style.display = "none";
+    startPge.style.display = "none";
+    highscorePge.style.display = "block";
+    gamePge.style.display = "none";
+    saveScore();
+});
+
+var scoreCheck = document.querySelector("#score-check");
+scoreCheck.addEventListener("click", function(event) {
+    event.preventDefault();
+    savePge.style.display = "none";
+    startPge.style.display = "none";
+    highscorePge.style.display = "block";
+    gamePge.style.display ="none";
+    renderScore();
+});
+
+var backBtn = document.querySelector("#backBtn");
+backBtn.addEventListener("click",function(event){
+    event.preventDefault();
+    savePge.style.display = "none";
+    startPge.style.display = "block";
+    highscorePge.style.display = "none";
+    gamePge.style.display ="none";
+    location.reload();
+});
+
