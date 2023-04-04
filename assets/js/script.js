@@ -1,64 +1,4 @@
-//A. TODO: define all questions and answers
-    // create variables for questions and answers that connect to html elements
-
-//B. TODO: create timer function that will countdown seconds
-    // create variables for timer that connect to html elements
-    // timer function must:
-        // display correctly on screen
-        // subtract 20 seconds when incorrect answer is selected
-        // IF timer hits 0:
-            // End quiz function is called
-
-//C. TODO: create a function to start the quiz
-    // create variables for start that connect to html
-    // When quiz start button is pushed:
-        // hide the start button
-        // display the first question
-        // begin timer countdown
-
-//D. TODO: create a function to render a question
-    //create variables for game page to connect to html elements
-    // When question is rendered:
-        // add question to question container
-        // make button for each answer
-        // add answers to answers container
-
-//E. TODO: create function to end quiz 
-    // create variables for end of quiz that connect to html elements
-    // when quiz is completed:
-        // timer stops
-        // questions are hidden
-        // end screen is shown
-        // time remaining is shown as score
-
-//F. TODO: create function that handles answer responses
-    // create variables for answer responses that connect to html elements
-    // IF answer is correct :
-        // flash correct 
-    // ELSE IF answer is wrong:
-        // subtract time from timer
-        // wrong answer message is flashed on screen (setTimeout)
-    //
-    // display new question
-    // 
-    // IF no more questions: 
-        // end quiz is called
-    
-//G. TODO: create a function that saves high scores
-    // create variables for scores that connect to html elements
-    // when function runs:
-        // get value of users initials
-        // validate input
-        // retrieve existing data from local storage
-        // redirect to start screen after save
-
-//H. TODO: add event listeners for the following: 
-    // click start
-    // click answers
-    // click save score
-    // click view scores
-
-// A. TODO: define all questions and answers
+// array of questions, choices, and answers
 var questionSrc = [
     {
         question: "Where is Rose from?",
@@ -102,12 +42,13 @@ var questionSrc = [
     }
 ];  
 
+// variables connecting to html for questions
 var answerBtn1 = document.querySelector("#choice1");
 var answerBtn2 = document.querySelector("#choice2");
 var answerBtn3 = document.querySelector("#choice3");
 var answerBtn4 = document.querySelector("#choice4");
 
-// B. TODO: create timer function that will countdown seconds
+// variables and function for countdown timer
 var timeLeft = document.querySelector("#timer");
 var secondsLeft = 300;
 
@@ -128,7 +69,7 @@ function countdown() {
     }, 1000);
 }
 
-// C. TODO: create a function to start the quiz
+// variables and function for starting the quiz
 var startBtn = document.querySelector("#startBtn");
 var startPge = document.querySelector("#start");
 var gamePge = document.querySelector("#gamePge");
@@ -141,7 +82,7 @@ function startQuiz() {
 };
 
 
-//D. TODO: create a function to render a question
+// variables and function to display the questions
 var questionEl = document.querySelector("#question");
 var questionNum = 0;
 var questionCount = 1;
@@ -156,7 +97,7 @@ function askQuestion(n) {
 };
 
 
-//E. TODO: create function to end quiz 
+// variables and function to end the quiz
 var savePge = document.querySelector("#savePge");
 var endScore = document.querySelector("#totalScore")
 
@@ -169,7 +110,7 @@ function endQuiz() {
 };
 
 
-//F. TODO: create function that handles answer responses
+// variable and function to check answer responses
 var checked = document.querySelector("#check");
 
 function checkAnswers(event) {
@@ -196,7 +137,7 @@ function checkAnswers(event) {
 };
 
 
-//G. TODO: create a function that saves high scores
+//variables and functions for saving highscores
 var saveBtn = document.querySelector("#saveBtn");
 var highscorePge = document.querySelector("#highscorePge");
 var recordScore = document.querySelector("#recordScore");
@@ -256,7 +197,7 @@ function saveScore() {
 };
 
 
-//H. TODO: add event listeners 
+// variables and eventListeners for buttons
 var answerChoices = document.querySelectorAll(".answers")
 
 startBtn.addEventListener("click", startQuiz); 
