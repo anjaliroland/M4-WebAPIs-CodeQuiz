@@ -33,6 +33,8 @@ THEN I can save my initials and my score
 
 When you first open the site, you will be met with the page below. Once you click the start button multiple choice questions will appear and the timer will start counting down from 300 seconds. When you choose one of the choices the next question will appear aswell as a brief message below telling you if you got the previous question right or wrong. If you get the question wrong the timer will automatically deduct 20 seconds and the quiz will end once all questions are answered or the timer has run out. The remaining time will be your score, which you can then save by entering your initials and clicking the save button. If you click the view highscores button in the top left you will be brought to a page that lists the top 5 scores along side the initials of who got the score. 
 
+![screenshot](./assets/images/screenshot.png)
+
 ## License
 
 Please refer to the LICENSE in the repo.
