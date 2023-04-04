@@ -36,7 +36,7 @@ header {
     /* veiw highscores styling */
 header button {
     margin-top: 12px;
-    font-size: 20px;
+    font-size: 16px;
 }
     /* timer styling */
 #timer {
@@ -104,6 +104,7 @@ main {
 
     /* question styling */
 .gamePage h2 {
+    padding-top: 30px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -126,14 +127,24 @@ main {
     justify-content: center;
 }
 
-/* answer check styling */
-
-
-/* score page styling */
-
-
-/* highscores page styling */
-
-
-
 /* display sizes styling */
+@media only screen and (max-width: 960px) {
+    body {
+      background-color: var(--blue);
+    }
+    main {
+        margin-left:50px;
+        margin-right:50px;
+    }
+  }
+
+@media only screen and (max-width: 520px) {
+    body {
+      background-color: var(--blue);
+      font-size: 130%;
+    }
+    main {
+        margin-left:12px;
+        margin-right:12px;
+    }
+}
