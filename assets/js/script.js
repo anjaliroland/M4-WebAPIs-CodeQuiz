@@ -119,7 +119,7 @@ function checkAnswers(event) {
     checked.style.display = "block";
     setTimeout(function () {
         checked.style.display = "none";
-    }, 1000);
+    }, 1500);
 
     if(questionSrc[questionNum].answer == event.target.value) {
         checked.textContent = "Correct!";
